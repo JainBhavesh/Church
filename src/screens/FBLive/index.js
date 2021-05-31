@@ -4,7 +4,7 @@ import { SafeAreaView, Image } from "react-native";
 import CustomeHeader from "../../components/CustomeHeader";
 import styles from "../../styles/style";
 
-const FBLive = () => {
+const FBLive = (props) => {
     return (
         <View style={styles.secoundaryBG, styles.flex}>
             <SafeAreaView style={[styles.flex, styles.secoundaryBG]}>

@@ -151,7 +151,8 @@ let styles = StyleSheet.create({
         borderColor: '#000',
         height: 50,
         marginBottom: 10,
-        paddingLeft: 20
+        paddingLeft: 20,
+        borderRadius: 5
     },
 
     textArea: {
