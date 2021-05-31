@@ -126,7 +126,8 @@ function Navigation() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="Home" component={HomeTabs} screenOptions={{ backgroundColor: styles.secoundaryBG }} options={{ headerShown: false }} />
+                {/* <Stack.Screen name="Home" component={HomeTabs} screenOptions={{ backgroundColor: styles.secoundaryBG }} options={{ headerShown: false }} /> */}
+                <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
                 <Stack.Screen name="Fblive" component={FBLive} options={{ headerShown: false }} />
                 <Stack.Screen name="Youtube" component={Youtube} options={{ headerShown: false }} />
                 <Stack.Screen name="Staff" component={Staff} options={{ headerShown: false }} />

@@ -11,14 +11,10 @@ let styles = StyleSheet.create({
         backgroundColor: '#d4af37'
     },
     tabbar: {
-        backgroundColor: "#460000",
-        justifyContent: 'space-between',
-        borderTopRightRadius: 30,
-        borderTopLeftRadius: 30,
-        paddingBottom: 10,
-        paddingTop: 5,
-        height: 70,
-        zIndex: 0,
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     tabImage: {
         height: 30,
@@ -37,6 +33,8 @@ let styles = StyleSheet.create({
         flex: 1
     },
     mh10: { marginHorizontal: 10 },
+    mv10: { marginVertical: 10 },
+    mv20: { marginVertical: 20 },
     m20: {
         margin: 20
     },
@@ -107,6 +105,9 @@ let styles = StyleSheet.create({
         shadowRadius: 10,
         shadowOpacity: 0.35,
     },
+    f12: {
+        fontSize: 12
+    }
 })
 
 export default styles

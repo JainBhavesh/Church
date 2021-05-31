@@ -1,9 +1,14 @@
 import { Text, View } from "native-base";
 import React from 'react';
-const Contact = () => {
+import CustomeHeader from "../../components/CustomeHeader";
+const Contact = (props) => {
     return (
-        <View>
-            <Text>Hello</Text>
+        <View style={{ flex: 1 }}>
+            <CustomeHeader headerText="CONTACT US" onClick={() => props.navigation.goBack()} />
+
+            <ScrollView style={{ flex: 1 }} keyboardShouldPersistTaps='handled'>
+
+            </ScrollView>
         </View>
     )
 }

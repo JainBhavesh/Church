@@ -5,11 +5,13 @@ import styles from "../../styles/style";
 import FbIcon from '../../assets/facebookIcon.svg';
 import InstaIcon from '../../assets/instagramIcon.svg';
 import YoutubeIcon from '../../assets/youtubeIcon.svg';
+import { useNavigation } from "@react-navigation/core";
 
 const Home = () => {
+    const navigation = useNavigation();
     return (
         <View style={styles.secoundaryBG, styles.flex}>
-            <SafeAreaView style={styles.flex}>
+            <SafeAreaView style={[styles.flex, styles.secoundaryBG]}>
                 <ScrollView style={[styles.flex, styles.secoundaryBG]}>
                     <View style={styles.mb20}>
                         <Image source={require('../../assets/homehead.png')} style={{ resizeMode: 'cover', width: '100%' }} />
@@ -82,8 +84,58 @@ const Home = () => {
                         </View>
                     </View>
                 </ScrollView>
+                <View style={[styles.mainBG, { height: 60, justifyContent: 'center', borderTopLeftRadius: 20, borderTopRightRadius: 20, flexDirection: 'row', alignContent: 'center', alignItems: 'center' }]}>
+
+                    <View style={styles.tabbar}>
+                        <TouchableOpacity style={styles.tabbar}>
+                            <Image source={require('../../assets/Home.png')} />
+                            <Text style={[styles.textwhite, styles.f12]}>Home</Text>
+                        </TouchableOpacity>
+
+                    </View>
+                    <View style={styles.tabbar}>
+                        <TouchableOpacity style={styles.tabbar} onPress={() => {
+                            navigation.navigate('Staff');
+                        }}>
+                            <Image source={require('../../assets/emp.png')} style={{ height: 30 }} />
+                            <Text style={[styles.textwhite, styles.f12, { marginTop: 2 }]}>Staff</Text>
+                        </TouchableOpacity>
+                    </View>
+
+
+                    <View style={styles.tabbar}>
+
+                        <TouchableOpacity style={styles.tabbar} onPress={() => {
+                            navigation.navigate('Youtube');
+                        }}>
+                            <Image source={require('../../assets/youtube.png')} />
+                            <Text style={[styles.textwhite, styles.f12]}>Youtube</Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    <View style={styles.tabbar}>
+
+                        <TouchableOpacity style={styles.tabbar} onPress={() => {
+                            navigation.navigate('Contact');
+                        }}>
+                            <Image source={require('../../assets/contact.png')} />
+                            <Text style={[styles.textwhite, styles.f12, { marginTop: 5 }]}>Contact Us</Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    <View style={styles.tabbar}>
+                        <TouchableOpacity style={styles.tabbar} onPress={() => {
+                            navigation.navigate('Fblive');
+                        }}>
+                            <Image source={require('../../assets/fbLive.png')} />
+                            <Text style={[styles.textwhite, styles.f12, { marginTop: 2 }]}>FB Live</Text>
+                        </TouchableOpacity>
+                    </View>
+
+
+                </View>
             </SafeAreaView>
-        </View >
+        </View>
     )
 
 }
