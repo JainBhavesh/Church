@@ -1,16 +1,18 @@
 import { Text, View } from "native-base";
 import React from 'react';
-import { ScrollView } from "react-native";
+import { SafeAreaView, Image } from "react-native";
 import CustomeHeader from "../../components/CustomeHeader";
+import styles from "../../styles/style";
 
 const FBLive = () => {
     return (
-        <View style={{ flex: 1 }}>
-            <CustomeHeader headerText="LIVE STREAMING" onClick={() => props.navigation.goBack()} />
-
-            <ScrollView style={{ flex: 1 }} keyboardShouldPersistTaps='handled'>
-
-            </ScrollView>
+        <View style={styles.secoundaryBG, styles.flex}>
+            <SafeAreaView style={[styles.flex, styles.secoundaryBG]}>
+                <CustomeHeader headerText="Live Streaming" centerTextStyle={{ flex: 0.7, alignItems: "flex-start" }} onClick={() => props.navigation.goBack()} />
+                <View style={{ marginTop: 20 }}>
+                    <Image source={require('../../assets/stream.png')} style={{ width: "100%", height: "100%" }} />
+                </View>
+            </SafeAreaView>
         </View>
     )
 }

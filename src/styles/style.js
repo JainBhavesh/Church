@@ -43,8 +43,8 @@ let styles = StyleSheet.create({
     },
     btn: {
         textAlign: 'center',
-        fontWeight: '900',
-        padding: 10,
+        fontWeight: 'bold',
+        // padding: 10,
         color: 'white',
         fontSize: 15,
         borderRadius: 5,
@@ -107,7 +107,65 @@ let styles = StyleSheet.create({
     },
     f12: {
         fontSize: 12
-    }
+    },
+    imageBG: {
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: 'flex-end',
+        borderRadius: 30,
+        // position: 'relative'
+    },
+    imagecontainer: {
+        height: 200,
+        marginHorizontal: 30,
+        marginVertical: 10,
+        borderRadius: 25
+    },
+    youtubeText: {
+        color: "white",
+        fontSize: 12,
+        fontWeight: "bold",
+        textAlign: "left",
+        padding: 5,
+        // textTransform: 'uppercase',
+        // backgroundColor: 'black',
+        borderBottomLeftRadius: 5,
+        borderBottomRightRadius: 5
+    },
+
+    //contact us
+    input: {
+        flex: 1,
+        paddingLeft: 0,
+        backgroundColor: '#6a6a6a',
+        color: '#f6f6f6',
+    },
+
+    SectionStyle: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#6a6a6a',
+        color: "#f6f6f6",
+        borderWidth: .5,
+        borderColor: '#000',
+        height: 50,
+        marginBottom: 10,
+        paddingLeft: 20
+    },
+
+    textArea: {
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        alignContent: 'flex-start',
+        borderWidth: .5,
+        borderColor: '#000',
+        height: 100,
+        marginBottom: 10,
+        paddingLeft: 20,
+        backgroundColor: '#212121',
+    },
 })
 
 export default styles

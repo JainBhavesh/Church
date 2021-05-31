@@ -59,14 +59,18 @@ const Home = () => {
                             </TouchableOpacity>
                         </View> */}
 
-                        <View style={[styles.homeRow, styles.mh70, styles.p10, styles.mainBG, styles.textwhite, styles.radius5, {
-                            flexDirection: "row",
-                            justifyContent: 'center'
-                        }]}
-                        >
-                            <Image style={{ marginRight: 15 }} source={require('../../assets/history.png')} />
-                            <Text style={[styles.textwhite, styles.fb]}>OUR HISTORY</Text>
-                        </View>
+                        <TouchableOpacity style={styles.tabbar} onPress={() => {
+                            navigation.navigate('History');
+                        }}>
+                            <View style={[styles.homeRow, styles.mh70, styles.p10, styles.mainBG, styles.textwhite, styles.radius5, {
+                                flexDirection: "row",
+                                justifyContent: 'center'
+                            }]}
+                            >
+                                <Image style={{ marginRight: 15 }} source={require('../../assets/history.png')} />
+                                <Text style={[styles.textwhite, styles.fb]}>OUR HISTORY</Text>
+                            </View>
+                        </TouchableOpacity>
 
                         <View style={styles.homeRow}>
                             <TouchableOpacity onPress={() => { }}>

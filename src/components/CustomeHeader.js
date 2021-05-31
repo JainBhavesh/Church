@@ -32,11 +32,11 @@ const styles = StyleSheet.create({
     },
     textstyle: {
         color: "white",
-        fontSize: 15 / fontScale,
+        fontSize: 18 / fontScale,
         fontWeight: "bold",
         textAlign: "left",
         padding: 10,
-        textTransform: 'uppercase'
+        // textTransform: 'uppercase'
     },
     header: {
         flexDirection: "row",

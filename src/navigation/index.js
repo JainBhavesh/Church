@@ -12,6 +12,7 @@ import Youtube from '../screens/Youtube';
 import Staff from '../screens/Staff';
 import Contact from '../screens/ContactUs';
 import styles from '../styles/style';
+import History from '../screens/History';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -133,6 +134,7 @@ function Navigation() {
                 <Stack.Screen name="Staff" component={Staff} options={{ headerShown: false }} />
                 <Stack.Screen name="Contact" component={Contact} options={{ headerShown: false }} />
                 <Stack.Screen name="Splash" component={Splash} options={{ headerShown: false }} />
+                <Stack.Screen name="History" component={History} options={{ headerShown: false }} />
 
             </Stack.Navigator>
         </NavigationContainer>
