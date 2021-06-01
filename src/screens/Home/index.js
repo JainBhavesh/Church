@@ -92,7 +92,7 @@ const Home = () => {
 
                     <View style={styles.tabbar}>
                         <TouchableOpacity style={styles.tabbar}>
-                            <Image source={require('../../assets/Home.png')} />
+                            <Image source={require('../../assets/Home.png')} style={{ width: 25, height: 25, marginBottom: 5 }} />
                             <Text style={[styles.textwhite, styles.f12]}>Home</Text>
                         </TouchableOpacity>
 
@@ -101,8 +101,8 @@ const Home = () => {
                         <TouchableOpacity style={styles.tabbar} onPress={() => {
                             navigation.navigate('Staff');
                         }}>
-                            <Image source={require('../../assets/emp.png')} style={{ height: 30 }} />
-                            <Text style={[styles.textwhite, styles.f12, { marginTop: 2 }]}>Staff</Text>
+                            <Image source={require('../../assets/emp.png')} style={{ width: 35, height: 35, marginBottom: 1, marginTop: -10 }} />
+                            <Text style={[styles.textwhite, styles.f12, { marginTop: 5 }]}>Staff</Text>
                         </TouchableOpacity>
                     </View>
 
@@ -112,7 +112,7 @@ const Home = () => {
                         <TouchableOpacity style={styles.tabbar} onPress={() => {
                             navigation.navigate('Youtube');
                         }}>
-                            <Image source={require('../../assets/youtube.png')} />
+                            <Image source={require('../../assets/youtube.png')} style={{ width: 28, height: 30 }} />
                             <Text style={[styles.textwhite, styles.f12]}>Youtube</Text>
                         </TouchableOpacity>
                     </View>
@@ -122,7 +122,7 @@ const Home = () => {
                         <TouchableOpacity style={styles.tabbar} onPress={() => {
                             navigation.navigate('Contact');
                         }}>
-                            <Image source={require('../../assets/contact.png')} />
+                            <Image source={require('../../assets/contact.png')} style={{ width: 25, height: 25 }} />
                             <Text style={[styles.textwhite, styles.f12, { marginTop: 5 }]}>Contact Us</Text>
                         </TouchableOpacity>
                     </View>
@@ -131,7 +131,7 @@ const Home = () => {
                         <TouchableOpacity style={styles.tabbar} onPress={() => {
                             navigation.navigate('Fblive');
                         }}>
-                            <Image source={require('../../assets/fbLive.png')} />
+                            <Image source={require('../../assets/fbLive.png')} style={{ width: 28, height: 28 }} />
                             <Text style={[styles.textwhite, styles.f12, { marginTop: 2 }]}>FB Live</Text>
                         </TouchableOpacity>
                     </View>
