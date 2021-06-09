@@ -167,6 +167,21 @@ let styles = StyleSheet.create({
         paddingLeft: 20,
         backgroundColor: '#212121',
     },
+    pv20: {
+        paddingVertical: 20,
+    },
+    ph10: {
+        paddingHorizontal: 10
+    },
+    pb10: {
+        paddingBottom: 10
+    },
+    pb20: {
+        paddingBottom: 20
+    },
+    mainbgText: {
+        color: '#c1983b'
+    }
 })
 
 export default styles

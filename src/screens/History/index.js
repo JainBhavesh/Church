@@ -10,6 +10,24 @@ const History = (props) => {
                 <CustomeHeader headerText="History" onClick={() => props.navigation.goBack()} />
 
                 <ScrollView style={[styles.flex, styles.secoundaryBG]}>
+                    <View style={[styles.mainBG, styles.mh20, styles.mv20, styles.pv20, styles.ph10]}>
+                        <Text style={[styles.f25, styles.pb10, { color: "#d4af37", textAlign: 'center' }]}>History of Jerriel Missionary Baptist Church</Text>
+                        <Text style={[styles.f15, styles.pb10, styles.mainbgText, { textAlign: 'center' }]}>
+                            "On Octomber 24,1925 a group of people came together to organize a Missionary Baptist Church - The Minutes read us follow:
+                        </Text>
+                        <Text style={[styles.f15, styles.pb10, styles.mainbgText, { textAlign: 'center' }]}>
+                            The green Grove Baptist Church
+                        </Text>
+
+                        <Text style={[styles.f15, styles.pb10, styles.mainbgText, { textAlign: 'center' }]}>
+                            Cincinnati, Ohio
+                        </Text>
+
+                        <Text style={[styles.f15, styles.pb20, styles.mainbgText, { textAlign: 'center' }]}>
+                            Octomber 24, 1925:
+                        </Text>
+
+                    </View>
                     <View style={[styles.secoundaryBG, styles.mh20, { justifyContent: 'center', alignSelf: 'center', marginVertical: 20 }]}>
                         <Image source={require('../../assets/w.png')} style={{ height: 200, width: 150 }} />
                     </View>
