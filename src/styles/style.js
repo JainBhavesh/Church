@@ -25,7 +25,7 @@ let styles = StyleSheet.create({
         marginBottom: 30,
         marginHorizontal: 80,
         textAlign: 'center',
-        fontSize: 20,
+        fontSize: 20 / fontScale,
         alignContent: 'center',
         justifyContent: 'space-between',
     },
@@ -49,7 +49,7 @@ let styles = StyleSheet.create({
         fontWeight: 'bold',
         // padding: 10,
         color: 'white',
-        fontSize: 15,
+        fontSize: 15 / fontScale,
         borderRadius: 5,
         textTransform: 'uppercase'
     },
@@ -75,13 +75,13 @@ let styles = StyleSheet.create({
         color: "#460000"
     },
     f15: {
-        fontSize: 15
+        fontSize: 15 / fontScale
     },
     f20: {
-        fontSize: 20
+        fontSize: 20 / fontScale
     },
     f25: {
-        fontSize: 25
+        fontSize: 25 / fontScale
     },
     fb: {
         fontWeight: 'bold'
@@ -109,7 +109,7 @@ let styles = StyleSheet.create({
         shadowOpacity: 0.35,
     },
     f12: {
-        fontSize: 12
+        fontSize: 12 / fontScale
     },
     imageBG: {
         flex: 1,
@@ -126,7 +126,7 @@ let styles = StyleSheet.create({
     },
     youtubeText: {
         color: "white",
-        fontSize: 12,
+        fontSize: 12 / fontScale,
         fontWeight: "bold",
         textAlign: "left",
         padding: 5,
