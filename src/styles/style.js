@@ -38,6 +38,9 @@ let styles = StyleSheet.create({
     m20: {
         margin: 20
     },
+    mt20: {
+        marginTop: 20
+    },
     p10: {
         padding: 10
     },
