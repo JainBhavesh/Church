@@ -27,7 +27,7 @@ const History = (props) => {
                     setData(response.data.our_story);
                     setBanner(response.data.history_banner)
                 } else
-                    showToast("State not available");
+                    showToast("Data not available");
             }).catch((error) => {
                 console.log(error)
                 showToast(error)

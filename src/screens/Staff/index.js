@@ -25,7 +25,7 @@ const Staff = (props) => {
                     console.log('Api call result => ', response);
                     setData(response.data.our_story);
                 } else
-                    showToast("State not available");
+                    showToast("Data not available");
             }).catch((error) => {
                 console.log(error)
                 showToast(error)

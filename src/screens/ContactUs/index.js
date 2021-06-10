@@ -1,7 +1,9 @@
 import { Text, View } from "native-base";
 import React, { useState } from 'react';
-import { SafeAreaView, ScrollView, TextInput, TouchableOpacity } from "react-native";
+import { ActivityIndicator, SafeAreaView, ScrollView, TextInput, TouchableOpacity } from "react-native";
 import CustomeHeader from "../../components/CustomeHeader";
+import { apiCalling } from "../../services/ApiCall";
+import { showToast } from "../../services/CommonFunction";
 import styles from "../../styles/style";
 
 const Contact = (props) => {
@@ -9,6 +11,61 @@ const Contact = (props) => {
     const [mobile, setMobile] = useState("");
     const [message, setMessage] = useState("");
     const [isLoading, setLoading] = useState(false);
+
+
+    const submit = () => {
+        if (name == "") {
+            showToast('Please enter name');
+            return;
+        }
+        var regex = /^[a-zA-Z ]{2,30}$/;
+        if (regex.test(name) === false) {
+            showToast('Please enter valid name');
+            return;
+        }
+
+        if (mobile == "") {
+            showToast('Please enter contact number');
+            return;
+        }
+
+        if (mobile.length < 10) {
+            showToast('Please enter valid contact number');
+            return;
+        }
+
+        if (message == "") {
+            showToast('Please enter message');
+            return;
+        }
+
+        setLoading(true);
+        let formdata = new FormData();
+        formdata.append("name", name);
+        formdata.append("mobile_number", mobile);
+        formdata.append("user_message", message);
+        apiCalling("POST", "get-contact", {}, formdata).then(res => res.json())
+            .then(response => {
+                console.log('response received => ', response);
+                setLoading(false);
+                if (response.success == true) {
+                    showToast(response.message, 'green');
+                    setName("");
+                    setMobile("");
+                    setMessage("");
+                } else
+                    showToast(response.message);
+            }).catch((error) => {
+                console.log('Error => ', error);
+                if (error.name === 'AbortError') {
+                    showToast('Network Error')
+                } else {
+                    showToast('Something went wrong. Try again.')
+                }
+                setLoading(false);
+            });
+
+    }
 
     return (
         <View style={[styles.secoundaryBG, styles.flex]}>
@@ -58,7 +115,7 @@ const Contact = (props) => {
                         {/* </View> */}
 
                         {isLoading ?
-                            <ActivityIndicator style={{ marginTop: 8 }} size="large" color="#23B9CE" />
+                            <ActivityIndicator style={{ marginTop: 8 }} size="large" color="#460000" />
                             :
                             <View style={[styles.homeRow, styles.mh70, styles.p10, styles.mainBG, styles.textwhite, styles.radius5, {
                                 flexDirection: "row",
@@ -68,7 +125,7 @@ const Contact = (props) => {
                             >
                                 <TouchableOpacity
                                     onPress={() => {
-
+                                        submit()
                                     }}
                                 >
                                     <Text style={[styles.textwhite, styles.btn]}>Submit</Text>
