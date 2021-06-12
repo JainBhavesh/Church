@@ -81,7 +81,7 @@ const Home = () => {
                             <Text style={[styles.textmainBG, styles.f25, styles.fb, { textAlign: 'center' }]}>{activityTitle} </Text>
 
                             {activityData.map((d, index) => {
-                                return (<View style={[styles.mainBG, styles.mh10, styles.mv10, styles.p10, styles.radius5]}>
+                                return (<View key={index} style={[styles.mainBG, styles.mh10, styles.mv10, styles.p10, styles.radius5]}>
                                     <Text style={[styles.textwhite, styles.f15]}>{d.title_name}</Text>
                                     <Text style={[styles.textwhite, styles.f15]}>When: {d.when}</Text>
                                     <Text style={[styles.textwhite, styles.f15]}>Where: {d.where}</Text>
@@ -99,8 +99,46 @@ const Home = () => {
                                 <Text style={[styles.btn, styles.mainBG]}>OUR HISTORY</Text>
                             </TouchableOpacity>
                         </View> */}
+                                <View style={[styles.homeRow, styles.mh20, styles.p10, {
+                                    flexDirection: "row",
+                                    justifyContent: 'center'
+                                }]}
+                                >
+                                    <TouchableOpacity style={[styles.tabbar]} onPress={() => {
+                                        navigation.navigate('History');
+                                    }}>
+                                        <View style={[styles.homeRow, styles.mh10, styles.p10, styles.mainBG, styles.radius5, {
+                                            flexDirection: "row",
+                                            justifyContent: 'center'
+                                        }]}
+                                        >
+                                            <Image style={{ marginRight: 15, marginLeft: 10, width: 20 / fontScale, height: 20 / fontScale }} source={require('../../assets/history.png')} />
+                                            <Text style={[styles.textwhite, styles.fb, styles.f15]}>OUR HISTORY</Text>
+                                        </View>
+                                    </TouchableOpacity>
 
-                                <TouchableOpacity style={[styles.tabbar, styles.mt20]} onPress={() => {
+                                    <TouchableOpacity style={[styles.tabbar]} onPress={async () => {
+                                        const supported = await Linking.canOpenURL("https://cash.app");
+
+                                        if (supported) {
+                                            // Opening the link with some app, if the URL scheme is "http" the web link should be opened
+                                            // by some browser in the mobile
+                                            await Linking.openURL("https://cash.app");
+                                        } else {
+                                            Alert.alert(`Don't know how to open this URL: ${url}`);
+                                        }
+                                    }}>
+                                        <View style={[styles.homeRow, styles.mh10, styles.p10, styles.mainBG, styles.radius5, {
+                                            flexDirection: "row",
+                                            justifyContent: 'center'
+                                        }]}
+                                        >
+                                            <Text style={[styles.textwhite, styles.fb, styles.f15]}>Donate now</Text>
+                                        </View>
+                                    </TouchableOpacity>
+
+                                </View>
+                                {/* <TouchableOpacity style={[styles.tabbar, styles.mt20]} onPress={() => {
                                     navigation.navigate('History');
                                 }}>
                                     <View style={[styles.homeRow, styles.mh70, styles.p10, styles.mainBG, styles.textwhite, styles.radius5, {
@@ -111,16 +149,16 @@ const Home = () => {
                                         <Image style={{ marginRight: 15, width: 20 / fontScale, height: 20 / fontScale }} source={require('../../assets/history.png')} />
                                         <Text style={[styles.textwhite, styles.fb, styles.f15]}>OUR HISTORY</Text>
                                     </View>
-                                </TouchableOpacity>
+                                </TouchableOpacity> */}
 
                                 <View style={styles.homeRow}>
                                     <TouchableOpacity onPress={async () => {
-                                        const supported = await Linking.canOpenURL("https://www.facebook.com/");
+                                        const supported = await Linking.canOpenURL("https://www.facebook.com/JerrielMissionaryBaptistChurch");
 
                                         if (supported) {
                                             // Opening the link with some app, if the URL scheme is "http" the web link should be opened
                                             // by some browser in the mobile
-                                            await Linking.openURL("https://www.facebook.com/");
+                                            await Linking.openURL("https://www.facebook.com/JerrielMissionaryBaptistChurch");
                                         } else {
                                             Alert.alert(`Don't know how to open this URL: ${url}`);
                                         }
@@ -129,12 +167,12 @@ const Home = () => {
                                     </TouchableOpacity>
 
                                     <TouchableOpacity onPress={async () => {
-                                        const supported = await Linking.canOpenURL("https://www.instagram.com/");
+                                        const supported = await Linking.canOpenURL("https://www.instagram.com/jerriel_missionary_baptist_/");
 
                                         if (supported) {
                                             // Opening the link with some app, if the URL scheme is "http" the web link should be opened
                                             // by some browser in the mobile
-                                            await Linking.openURL("https://www.instagram.com/");
+                                            await Linking.openURL("https://www.instagram.com/jerriel_missionary_baptist_/");
                                         } else {
                                             Alert.alert(`Don't know how to open this URL: ${url}`);
                                         }
@@ -144,12 +182,12 @@ const Home = () => {
                                     </TouchableOpacity>
 
                                     <TouchableOpacity onPress={async () => {
-                                        const supported = await Linking.canOpenURL("https://www.youtube.com/");
+                                        const supported = await Linking.canOpenURL("https://www.youtube.com/channel/UCxDs1G8zb0SYwZZY51WxHoQ");
 
                                         if (supported) {
                                             // Opening the link with some app, if the URL scheme is "http" the web link should be opened
                                             // by some browser in the mobile
-                                            await Linking.openURL("https://www.youtube.com/");
+                                            await Linking.openURL("https://www.youtube.com/channel/UCxDs1G8zb0SYwZZY51WxHoQ");
                                         } else {
                                             Alert.alert(`Don't know how to open this URL: ${url}`);
                                         }

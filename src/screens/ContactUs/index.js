@@ -44,7 +44,7 @@ const Contact = (props) => {
         formdata.append("name", name);
         formdata.append("mobile_number", mobile);
         formdata.append("user_message", message);
-        apiCalling("POST", "get-contact", {}, formdata).then(res => res.json())
+        apiCalling("POST", "contact", {}, formdata).then(res => res.json())
             .then(response => {
                 console.log('response received => ', response);
                 setLoading(false);
@@ -117,20 +117,22 @@ const Contact = (props) => {
                         {isLoading ?
                             <ActivityIndicator style={{ marginTop: 8 }} size="large" color="#460000" />
                             :
-                            <View style={[styles.homeRow, styles.mh70, styles.p10, styles.mainBG, styles.textwhite, styles.radius5, {
-                                flexDirection: "row",
-                                justifyContent: 'center',
-                                marginVertical: 30
-                            }]}
+                            <TouchableOpacity
+                                onPress={() => {
+                                    submit()
+                                }}
                             >
-                                <TouchableOpacity
-                                    onPress={() => {
-                                        submit()
-                                    }}
+                                <View style={[styles.homeRow, styles.mh70, styles.p10, styles.mainBG, styles.textwhite, styles.radius5, {
+                                    flexDirection: "row",
+                                    justifyContent: 'center',
+                                    marginVertical: 30
+                                }]}
                                 >
+
                                     <Text style={[styles.textwhite, styles.btn]}>Submit</Text>
-                                </TouchableOpacity>
-                            </View>
+                                </View>
+                            </TouchableOpacity>
+
                         }
                     </View>
                 </ScrollView>
