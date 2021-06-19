@@ -41,7 +41,7 @@ const Home = () => {
                     setOurStory(response.data.our_story);
                     setActivityData(response.data.activities.review);
                     setActivityTitle(response.data.activities.title);
-                    setBannerImage(bannerImage);
+                    setBannerImage(response.data.home_page_banner.banner_image);
                 } else
                     showToast("Data not found");
             }).catch((error) => {
@@ -57,7 +57,7 @@ const Home = () => {
                     {loading ? <ActivityIndicator style={{ marginTop: 8 }} size="large" color="#460000" /> :
                         <View>
                             <View style={styles.mb20}>
-                                {bannerImage ? <Image source={{ uri: getSecureImage(bannerImage) }} style={{ resizeMode: 'cover', width: '100%', height: 250 }} /> : <View></View>}
+                                {bannerImage ? <Image source={{ uri: bannerImage }} style={{ resizeMode: 'cover', width: '100%', height: 250 }} /> : <View></View>}
                             </View>
                             <View style={[styles.p20, styles.mainBG, styles.textwhite, styles.mb20]}>
                                 <Text style={[styles.mb10, styles.f20, styles.textwhite, styles.fb]}>
