@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, ScrollView, Image, View, Text, ActivityIndicator } from "react-native";
 import CustomeHeader from "../../components/CustomeHeader";
-import { showToast } from '../../services/CommonFunction';
+import { getSecureImage, showToast } from '../../services/CommonFunction';
 import { apiCalling } from '../../services/ApiCall';
 import styles from "../../styles/style";
 
@@ -66,7 +66,7 @@ const History = (props) => {
                             {data.map((d, index) => {
                                 return (<View key={index}>
                                     <View style={[styles.secoundaryBG, styles.mh20, { justifyContent: 'center', alignSelf: 'center', marginVertical: 20 }]}>
-                                        <Image source={{ uri: d.image }} style={{ height: 200, width: 150 }} />
+                                        <Image source={{ uri: getSecureImage(d.image) }} style={{ height: 200, width: 150 }} />
                                     </View>
                                     <View style={[styles.textwhite]}>
                                         <Text style={[styles.textmainBG, styles.f15, { textAlign: 'justify', fontWeight: 'normal', marginHorizontal: 30 }]}>

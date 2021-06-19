@@ -9,3 +9,10 @@ export function showToast(message, color = "red") {
         numberOfLines: 10,
     });
 }
+
+export function getSecureImage(url) {
+    let bannerImage = url;
+    if (!bannerImage.includes('https'))
+        bannerImage = bannerImage.replace('http', 'https')
+    return bannerImage;
+}

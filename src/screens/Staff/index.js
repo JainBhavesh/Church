@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, ScrollView, Image, View, Text, ActivityIndicator } from "react-native";
 import CustomeHeader from "../../components/CustomeHeader";
 import styles from "../../styles/style";
-import { showToast } from '../../services/CommonFunction';
+import { getSecureImage, showToast } from '../../services/CommonFunction';
 import { apiCalling } from '../../services/ApiCall';
 
 const Staff = (props) => {
@@ -44,7 +44,7 @@ const Staff = (props) => {
                             return (
                                 <View key={index}>
                                     <View style={[styles.secoundaryBG, styles.mh20, { justifyContent: 'center', alignSelf: 'center', marginVertical: 20 }]}>
-                                        <Image source={{ uri: d.image }} style={{ height: 200, width: 150 }} />
+                                        <Image source={{ uri: getSecureImage(d.image) }} style={{ height: 200, width: 150 }} />
                                     </View>
                                     <View style={[styles.mainBG, styles.textwhite]}>
                                         <Text style={[styles.textwhite, styles.f25, styles.mh20, styles.mv20, { textAlign: 'center' }]}>
