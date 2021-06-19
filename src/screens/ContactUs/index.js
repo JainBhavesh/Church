@@ -103,7 +103,7 @@ const Contact = (props) => {
                         {/* <View style={styles.textArea}> */}
                         <TextInput
                             value={message}
-                            style={{ color: '#fff', backgroundColor: '#6a6a6a', color: '#f6f6f6', paddingLeft: 20, borderRadius: 5 }}
+                            style={{ color: '#fff', backgroundColor: '#6a6a6a', color: '#f6f6f6', paddingLeft: 20, borderRadius: 5, minHeight: 150, }}
                             placeholder="Message"
                             placeholderTextColor="#f6f6f6"
                             multiline

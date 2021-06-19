@@ -21,7 +21,7 @@ const Home = () => {
     const [activityData, setActivityData] = useState([]);
     const [ourStory, setOurStory] = useState("");
     const [activityTitle, setActivityTitle] = useState("");
-    const [bannerImage, setBannerImage] = useState("../../assets/homehead.png");
+    const [bannerImage, setBannerImage] = useState(null);
 
     useEffect(() => {
         getHomePageData();
@@ -57,7 +57,7 @@ const Home = () => {
                     {loading ? <ActivityIndicator style={{ marginTop: 8 }} size="large" color="#460000" /> :
                         <View>
                             <View style={styles.mb20}>
-                                <Image source={{ uri: bannerImage }} style={{ resizeMode: 'cover', width: '100%', height: 250 }} />
+                                {bannerImage ? <Image source={{ uri: bannerImage }} style={{ resizeMode: 'cover', width: '100%', height: 250 }} /> : <View></View>}
                             </View>
                             <View style={[styles.p20, styles.mainBG, styles.textwhite, styles.mb20]}>
                                 <Text style={[styles.mb10, styles.f20, styles.textwhite, styles.fb]}>
